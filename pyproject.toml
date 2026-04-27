@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-puml"
+version = "0.1.0"
+description = "PU learning benchmark toolkit for Polish text datasets with multiple labeling strategies and reproducible AUC/PR-AUC/F1 evaluation"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.4",
+  "matplotlib>=3.8",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["py_puml*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

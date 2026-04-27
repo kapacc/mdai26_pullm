@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# pytest & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# LaTeX compilation artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Data & large files (users provide their own)
+data/
+data_preprocessed/
+speakleash_object/
+
+# Pre-computed outputs (regenerable)
+outputs/*.png
+outputs/*.pdf
+outputs/*.txt
+outputs/*_pivot.csv
+outputs/*_stats.csv
+outputs/*_distributions.*
+
+# Keep benchmark CSVs as reference
+!outputs/benchmark_runs.csv
+!outputs/benchmark_summary.csv
+
+# Temporary files
+*.tmp
+.ipynb_checkpoints/

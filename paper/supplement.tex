@@ -1,0 +1,350 @@
+﻿\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+
+\title{Supplementary Material: Detailed Benchmark Results}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+This supplement reports detailed benchmark results for all datasets and both labelling strategies (\texttt{mvc}, \texttt{classic}). Each cell shows mean $\pm$ standard deviation over 10 seeds.
+
+\section{Labelling Strategy: \texttt{mvc}}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{ISAP\_corpus} with labelling strategy \texttt{mvc} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_mvc_ISAP_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.089$\pm$0.017 & 0.127$\pm$0.018 & 0.249$\pm$0.025 & 0.005 & 0.005 & 0.005 & 0.000 & 0.000 & 0.000 \\
+Clust & 0.772$\pm$0.043 & 0.104$\pm$0.025 & 0.184$\pm$0.030 & 0.022$\pm$0.003 & 0.005 & 0.005 & 0.017 & 0.000 & 0.000 \\
+S-LassClust & 0.820$\pm$0.051 & 0.090$\pm$0.021 & 0.144$\pm$0.023 & \textbf{0.036$\pm$0.008} & 0.005 & 0.005 & 0.017 & 0.000 & 0.000 \\
+NS-LassClust & \textbf{0.821$\pm$0.050} & 0.090$\pm$0.021 & 0.144$\pm$0.023 & \textbf{0.036$\pm$0.008} & 0.005 & 0.005 & 0.017 & 0.000 & 0.000 \\
+LassoJoint & 0.144$\pm$0.036 & 0.176$\pm$0.021 & 0.241$\pm$0.009 & 0.007 & 0.005 & 0.005 & 0.004$\pm$0.001 & 0.000 & 0.000 \\
+Spy & 0.580$\pm$0.039 & \textbf{0.543$\pm$0.036} & \textbf{0.543$\pm$0.036} & 0.010$\pm$0.001 & \textbf{0.009$\pm$0.001} & \textbf{0.009$\pm$0.001} & \textbf{0.019$\pm$0.001} & \textbf{0.019} & \textbf{0.019} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{job\_offers\_pl\_corpus} with labelling strategy \texttt{mvc} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_mvc_job_offers_pl_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & \textbf{0.575$\pm$0.012} & 0.667$\pm$0.012 & \textbf{0.798$\pm$0.009} & \textbf{0.178$\pm$0.005} & 0.221$\pm$0.008 & 0.355$\pm$0.012 & 0.000 & 0.000 & 0.001$\pm$0.002 \\
+Clust & 0.345$\pm$0.012 & 0.587$\pm$0.009 & 0.663$\pm$0.009 & 0.120$\pm$0.002 & 0.195$\pm$0.009 & 0.256$\pm$0.014 & \textbf{0.287$\pm$0.001} & 0.040$\pm$0.014 & 0.090$\pm$0.021 \\
+S-LassClust & 0.327$\pm$0.006 & 0.684$\pm$0.012 & 0.758$\pm$0.013 & 0.117$\pm$0.001 & \textbf{0.305$\pm$0.020} & \textbf{0.383$\pm$0.024} & 0.286$\pm$0.001 & 0.106$\pm$0.021 & 0.215$\pm$0.019 \\
+NS-LassClust & 0.325$\pm$0.008 & 0.684$\pm$0.012 & 0.758$\pm$0.013 & 0.117$\pm$0.001 & \textbf{0.305$\pm$0.020} & \textbf{0.383$\pm$0.024} & 0.286$\pm$0.001 & 0.106$\pm$0.021 & 0.215$\pm$0.019 \\
+LassoJoint & 0.436$\pm$0.011 & \textbf{0.704$\pm$0.019} & 0.766$\pm$0.013 & 0.158$\pm$0.001 & 0.298$\pm$0.020 & 0.371$\pm$0.019 & 0.116$\pm$0.016 & 0.169$\pm$0.023 & \textbf{0.312$\pm$0.017} \\
+Spy & 0.484$\pm$0.009 & 0.522$\pm$0.011 & 0.522$\pm$0.010 & 0.154$\pm$0.003 & 0.170$\pm$0.005 & 0.170$\pm$0.004 & 0.032$\pm$0.028 & \textbf{0.274$\pm$0.008} & 0.271$\pm$0.006 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{open\_subtitles\_corpus} with labelling strategy \texttt{mvc} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_mvc_open_subtitles_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & \textbf{0.565$\pm$0.012} & 0.677$\pm$0.011 & 0.819$\pm$0.012 & \textbf{0.682$\pm$0.011} & 0.761$\pm$0.012 & 0.874$\pm$0.012 & 0.000 & 0.105$\pm$0.009 & 0.819$\pm$0.006 \\
+Clust & 0.532$\pm$0.010 & 0.488$\pm$0.011 & 0.492$\pm$0.010 & 0.633$\pm$0.007 & 0.604$\pm$0.008 & 0.606$\pm$0.007 & 0.357$\pm$0.013 & \textbf{0.751$\pm$0.006} & 0.777$\pm$0.003 \\
+S-LassClust & 0.555$\pm$0.013 & 0.521$\pm$0.011 & 0.571$\pm$0.010 & 0.645$\pm$0.009 & 0.627$\pm$0.008 & 0.664$\pm$0.009 & 0.368$\pm$0.037 & 0.746$\pm$0.006 & 0.783$\pm$0.004 \\
+NS-LassClust & 0.558$\pm$0.013 & 0.521$\pm$0.011 & 0.571$\pm$0.010 & 0.648$\pm$0.009 & 0.627$\pm$0.008 & 0.664$\pm$0.009 & \textbf{0.387$\pm$0.022} & 0.746$\pm$0.006 & 0.783$\pm$0.004 \\
+LassoJoint & 0.510$\pm$0.012 & \textbf{0.826$\pm$0.014} & \textbf{0.907$\pm$0.008} & 0.646$\pm$0.006 & \textbf{0.865$\pm$0.014} & \textbf{0.919$\pm$0.009} & 0.222$\pm$0.043 & 0.626$\pm$0.012 & \textbf{0.891$\pm$0.006} \\
+Spy & 0.488$\pm$0.005 & 0.492$\pm$0.010 & 0.490$\pm$0.009 & 0.636$\pm$0.002 & 0.617$\pm$0.006 & 0.617$\pm$0.006 & 0.005$\pm$0.003 & 0.019$\pm$0.004 & 0.018$\pm$0.004 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{plwiki} with labelling strategy \texttt{mvc} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_mvc_plwiki}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.665$\pm$0.010 & 0.643$\pm$0.010 & 0.721$\pm$0.008 & 0.525$\pm$0.009 & 0.517$\pm$0.009 & 0.626$\pm$0.013 & 0.005$\pm$0.002 & 0.023$\pm$0.005 & 0.029$\pm$0.008 \\
+Clust & 0.124$\pm$0.005 & 0.661$\pm$0.012 & 0.706$\pm$0.011 & 0.262$\pm$0.001 & 0.567$\pm$0.011 & 0.626$\pm$0.011 & 0.587$\pm$0.001 & 0.100$\pm$0.012 & 0.122$\pm$0.014 \\
+S-LassClust & 0.153$\pm$0.011 & 0.688$\pm$0.011 & 0.733$\pm$0.009 & 0.266$\pm$0.002 & 0.598$\pm$0.011 & 0.662$\pm$0.011 & 0.588$\pm$0.001 & 0.301$\pm$0.013 & 0.348$\pm$0.017 \\
+NS-LassClust & 0.153$\pm$0.011 & 0.688$\pm$0.011 & 0.733$\pm$0.009 & 0.266$\pm$0.002 & 0.598$\pm$0.011 & 0.662$\pm$0.011 & 0.588$\pm$0.001 & 0.301$\pm$0.013 & 0.348$\pm$0.017 \\
+LassoJoint & \textbf{0.729$\pm$0.014} & \textbf{0.781$\pm$0.009} & \textbf{0.853$\pm$0.005} & \textbf{0.590$\pm$0.010} & \textbf{0.727$\pm$0.012} & \textbf{0.812$\pm$0.009} & \textbf{0.691$\pm$0.020} & \textbf{0.620$\pm$0.015} & \textbf{0.643$\pm$0.010} \\
+Spy & 0.409$\pm$0.022 & 0.482$\pm$0.005 & 0.481$\pm$0.005 & 0.372$\pm$0.011 & 0.408$\pm$0.003 & 0.407$\pm$0.002 & 0.526$\pm$0.019 & 0.579$\pm$0.003 & 0.578$\pm$0.003 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{ulotki\_medyczne} with labelling strategy \texttt{mvc} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_mvc_ulotki_medyczne}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.173$\pm$0.009 & 0.545$\pm$0.021 & 0.827$\pm$0.011 & 0.035 & 0.065$\pm$0.004 & 0.243$\pm$0.020 & 0.000 & 0.000 & 0.000 \\
+Clust & 0.600$\pm$0.012 & 0.197$\pm$0.007 & 0.282$\pm$0.011 & 0.069$\pm$0.002 & 0.036 & 0.040$\pm$0.001 & 0.159$\pm$0.003 & 0.001$\pm$0.001 & 0.004$\pm$0.002 \\
+S-LassClust & \textbf{0.677$\pm$0.019} & 0.262$\pm$0.009 & 0.331$\pm$0.011 & 0.089$\pm$0.006 & 0.039 & 0.043$\pm$0.001 & \textbf{0.165$\pm$0.003} & 0.008$\pm$0.002 & 0.013$\pm$0.004 \\
+NS-LassClust & 0.676$\pm$0.020 & 0.262$\pm$0.009 & 0.331$\pm$0.011 & 0.089$\pm$0.007 & 0.039 & 0.043$\pm$0.001 & 0.164$\pm$0.003 & 0.008$\pm$0.002 & 0.013$\pm$0.004 \\
+LassoJoint & 0.306$\pm$0.012 & 0.799$\pm$0.025 & \textbf{0.951$\pm$0.004} & 0.062 & 0.193$\pm$0.026 & \textbf{0.522$\pm$0.032} & 0.001$\pm$0.001 & 0.000 & 0.015$\pm$0.007 \\
+Spy & 0.633$\pm$0.068 & \textbf{0.854$\pm$0.011} & 0.851$\pm$0.011 & \textbf{0.124$\pm$0.019} & \textbf{0.225$\pm$0.012} & 0.220$\pm$0.013 & 0.000 & \textbf{0.159$\pm$0.034} & \textbf{0.149$\pm$0.031} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{wolne\_lektury\_corpus} with labelling strategy \texttt{mvc} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_mvc_wolne_lektury_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & \textbf{0.626$\pm$0.012} & 0.650$\pm$0.016 & 0.718$\pm$0.012 & \textbf{0.416$\pm$0.009} & 0.431$\pm$0.011 & \textbf{0.517$\pm$0.014} & 0.000 & 0.002$\pm$0.002 & 0.054$\pm$0.013 \\
+Clust & 0.261$\pm$0.009 & 0.561$\pm$0.014 & 0.624$\pm$0.016 & 0.261$\pm$0.002 & 0.376$\pm$0.008 & 0.421$\pm$0.012 & \textbf{0.569$\pm$0.003} & 0.048$\pm$0.010 & 0.081$\pm$0.011 \\
+S-LassClust & 0.298$\pm$0.024 & 0.596$\pm$0.012 & 0.656$\pm$0.012 & 0.270$\pm$0.006 & 0.398$\pm$0.008 & 0.438$\pm$0.010 & \textbf{0.569$\pm$0.003} & 0.098$\pm$0.010 & 0.168$\pm$0.018 \\
+NS-LassClust & 0.298$\pm$0.023 & 0.596$\pm$0.012 & 0.656$\pm$0.012 & 0.270$\pm$0.005 & 0.398$\pm$0.008 & 0.438$\pm$0.010 & \textbf{0.569$\pm$0.003} & 0.098$\pm$0.010 & 0.168$\pm$0.018 \\
+LassoJoint & 0.493$\pm$0.014 & \textbf{0.660$\pm$0.012} & \textbf{0.726$\pm$0.011} & 0.375$\pm$0.006 & \textbf{0.445$\pm$0.010} & 0.499$\pm$0.013 & 0.251$\pm$0.032 & 0.157$\pm$0.020 & 0.262$\pm$0.017 \\
+Spy & 0.498$\pm$0.012 & 0.534$\pm$0.007 & 0.533$\pm$0.007 & 0.375$\pm$0.006 & 0.395$\pm$0.004 & 0.394$\pm$0.004 & 0.520$\pm$0.012 & \textbf{0.557$\pm$0.004} & \textbf{0.556$\pm$0.004} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Labelling Strategy: \texttt{classic}}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{ISAP\_corpus} with labelling strategy \texttt{classic} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_classic_ISAP_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & \textbf{0.826$\pm$0.055} & \textbf{0.757$\pm$0.062} & \textbf{0.645$\pm$0.058} & \textbf{0.038$\pm$0.010} & \textbf{0.025$\pm$0.008} & \textbf{0.014$\pm$0.003} & 0.000 & 0.000 & 0.000 \\
+Clust & 0.640$\pm$0.092 & 0.598$\pm$0.086 & 0.491$\pm$0.062 & 0.012$\pm$0.003 & 0.011$\pm$0.003 & 0.008$\pm$0.001 & 0.000 & 0.000 & 0.000 \\
+S-LassClust & 0.682$\pm$0.068 & 0.538$\pm$0.052 & 0.416$\pm$0.046 & 0.013$\pm$0.002 & 0.009$\pm$0.001 & 0.007$\pm$0.001 & 0.000 & 0.000 & 0.000 \\
+NS-LassClust & 0.682$\pm$0.068 & 0.558$\pm$0.091 & 0.416$\pm$0.046 & 0.013$\pm$0.002 & 0.010$\pm$0.002 & 0.007$\pm$0.001 & 0.000 & 0.000 & 0.000 \\
+LassoJoint & 0.666$\pm$0.077 & 0.663$\pm$0.081 & 0.577$\pm$0.042 & 0.017$\pm$0.008 & 0.015$\pm$0.005 & 0.010$\pm$0.001 & 0.000 & 0.000 & 0.000 \\
+Spy & 0.543$\pm$0.035 & 0.543$\pm$0.036 & 0.543$\pm$0.036 & 0.009$\pm$0.001 & 0.009$\pm$0.001 & 0.009$\pm$0.001 & \textbf{0.019} & \textbf{0.019} & \textbf{0.019} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{job\_offers\_pl\_corpus} with labelling strategy \texttt{classic} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_classic_job_offers_pl_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.822$\pm$0.011 & \textbf{0.828$\pm$0.011} & 0.819$\pm$0.012 & 0.377$\pm$0.016 & 0.384$\pm$0.018 & 0.373$\pm$0.017 & 0.000 & 0.000 & 0.008$\pm$0.004 \\
+Clust & 0.662$\pm$0.013 & 0.713$\pm$0.013 & 0.730$\pm$0.013 & 0.267$\pm$0.013 & 0.309$\pm$0.017 & 0.322$\pm$0.017 & 0.039$\pm$0.013 & 0.068$\pm$0.017 & 0.117$\pm$0.020 \\
+S-LassClust & 0.732$\pm$0.015 & 0.762$\pm$0.037 & 0.808$\pm$0.013 & 0.343$\pm$0.016 & 0.379$\pm$0.052 & 0.438$\pm$0.023 & 0.061$\pm$0.015 & 0.169$\pm$0.099 & 0.225$\pm$0.017 \\
+NS-LassClust & 0.732$\pm$0.015 & 0.781$\pm$0.029 & 0.808$\pm$0.013 & 0.343$\pm$0.016 & \textbf{0.400$\pm$0.040} & 0.438$\pm$0.023 & 0.061$\pm$0.015 & 0.088$\pm$0.040 & 0.225$\pm$0.017 \\
+LassoJoint & \textbf{0.892$\pm$0.008} & 0.803$\pm$0.026 & \textbf{0.888$\pm$0.009} & \textbf{0.635$\pm$0.021} & 0.398$\pm$0.028 & \textbf{0.632$\pm$0.020} & \textbf{0.590$\pm$0.013} & 0.233$\pm$0.201 & \textbf{0.577$\pm$0.017} \\
+Spy & 0.521$\pm$0.010 & 0.521$\pm$0.010 & 0.521$\pm$0.010 & 0.170$\pm$0.004 & 0.169$\pm$0.004 & 0.169$\pm$0.004 & 0.271$\pm$0.006 & \textbf{0.268$\pm$0.005} & 0.267$\pm$0.006 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{open\_subtitles\_corpus} with labelling strategy \texttt{classic} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_classic_open_subtitles_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & \textbf{0.704$\pm$0.023} & \textbf{0.852$\pm$0.016} & \textbf{0.856$\pm$0.010} & \textbf{0.786$\pm$0.019} & \textbf{0.893$\pm$0.012} & \textbf{0.892$\pm$0.009} & 0.004$\pm$0.002 & 0.131$\pm$0.028 & \textbf{0.853$\pm$0.005} \\
+Clust & 0.482$\pm$0.011 & 0.486$\pm$0.010 & 0.490$\pm$0.010 & 0.600$\pm$0.007 & 0.603$\pm$0.007 & 0.606$\pm$0.007 & 0.741$\pm$0.006 & 0.772$\pm$0.003 & 0.780$\pm$0.002 \\
+S-LassClust & 0.502$\pm$0.012 & 0.518$\pm$0.026 & 0.582$\pm$0.009 & 0.612$\pm$0.009 & 0.623$\pm$0.018 & 0.672$\pm$0.010 & 0.739$\pm$0.005 & \textbf{0.776$\pm$0.005} & 0.785$\pm$0.002 \\
+NS-LassClust & 0.502$\pm$0.012 & 0.531$\pm$0.013 & 0.582$\pm$0.009 & 0.612$\pm$0.009 & 0.633$\pm$0.011 & 0.672$\pm$0.010 & 0.739$\pm$0.005 & 0.713$\pm$0.163 & 0.785$\pm$0.002 \\
+LassoJoint & 0.469$\pm$0.014 & 0.846$\pm$0.119 & 0.508$\pm$0.015 & 0.604$\pm$0.016 & 0.879$\pm$0.082 & 0.641$\pm$0.009 & \textbf{0.788$\pm$0.002} & 0.754$\pm$0.192 & 0.789$\pm$0.001 \\
+Spy & 0.490$\pm$0.010 & 0.489$\pm$0.009 & 0.488$\pm$0.009 & 0.617$\pm$0.006 & 0.617$\pm$0.006 & 0.617$\pm$0.006 & 0.018$\pm$0.004 & 0.018$\pm$0.004 & 0.018$\pm$0.004 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{plwiki} with labelling strategy \texttt{classic} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_classic_plwiki}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.722$\pm$0.023 & 0.730$\pm$0.012 & 0.731$\pm$0.009 & 0.587$\pm$0.035 & 0.607$\pm$0.020 & 0.622$\pm$0.016 & 0.000 & 0.000$\pm$0.001 & 0.004$\pm$0.004 \\
+Clust & 0.710$\pm$0.023 & 0.705$\pm$0.016 & 0.720$\pm$0.011 & 0.654$\pm$0.027 & 0.638$\pm$0.020 & 0.648$\pm$0.015 & 0.011$\pm$0.005 & 0.019$\pm$0.007 & 0.045$\pm$0.011 \\
+S-LassClust & 0.429$\pm$0.034 & 0.674$\pm$0.050 & 0.718$\pm$0.011 & 0.416$\pm$0.027 & 0.615$\pm$0.055 & 0.652$\pm$0.015 & 0.018$\pm$0.007 & 0.046$\pm$0.023 & 0.117$\pm$0.015 \\
+NS-LassClust & 0.429$\pm$0.034 & 0.643$\pm$0.044 & 0.718$\pm$0.011 & 0.416$\pm$0.027 & 0.577$\pm$0.048 & 0.652$\pm$0.015 & 0.018$\pm$0.007 & 0.030$\pm$0.013 & 0.117$\pm$0.015 \\
+LassoJoint & \textbf{0.869$\pm$0.010} & \textbf{0.790$\pm$0.065} & \textbf{0.881$\pm$0.006} & \textbf{0.841$\pm$0.013} & \textbf{0.718$\pm$0.105} & \textbf{0.851$\pm$0.010} & 0.527$\pm$0.054 & 0.192$\pm$0.165 & \textbf{0.754$\pm$0.011} \\
+Spy & 0.481$\pm$0.005 & 0.480$\pm$0.005 & 0.480$\pm$0.005 & 0.407$\pm$0.002 & 0.407$\pm$0.002 & 0.407$\pm$0.002 & \textbf{0.578$\pm$0.003} & \textbf{0.578$\pm$0.003} & 0.578$\pm$0.003 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{ulotki\_medyczne} with labelling strategy \texttt{classic} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_classic_ulotki_medyczne}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.920$\pm$0.004 & 0.917$\pm$0.005 & 0.915$\pm$0.006 & 0.421$\pm$0.022 & 0.413$\pm$0.023 & 0.406$\pm$0.024 & 0.000 & 0.000 & 0.005$\pm$0.008 \\
+Clust & 0.381$\pm$0.012 & 0.427$\pm$0.012 & 0.457$\pm$0.010 & 0.046$\pm$0.001 & 0.050$\pm$0.001 & 0.052$\pm$0.001 & 0.012$\pm$0.002 & 0.016$\pm$0.003 & 0.022$\pm$0.005 \\
+S-LassClust & 0.369$\pm$0.013 & 0.424$\pm$0.020 & 0.462$\pm$0.010 & 0.045$\pm$0.001 & 0.049$\pm$0.002 & 0.053$\pm$0.001 & 0.018$\pm$0.004 & 0.040$\pm$0.017 & 0.042$\pm$0.006 \\
+NS-LassClust & 0.369$\pm$0.013 & 0.438$\pm$0.017 & 0.462$\pm$0.010 & 0.045$\pm$0.001 & 0.051$\pm$0.002 & 0.053$\pm$0.001 & 0.018$\pm$0.004 & 0.022$\pm$0.009 & 0.042$\pm$0.006 \\
+LassoJoint & \textbf{0.989$\pm$0.002} & \textbf{0.946$\pm$0.049} & \textbf{0.990$\pm$0.002} & \textbf{0.782$\pm$0.041} & \textbf{0.578$\pm$0.185} & \textbf{0.811$\pm$0.040} & \textbf{0.782$\pm$0.021} & \textbf{0.420$\pm$0.358} & \textbf{0.793$\pm$0.020} \\
+Spy & 0.849$\pm$0.011 & 0.847$\pm$0.011 & 0.845$\pm$0.011 & 0.217$\pm$0.011 & 0.214$\pm$0.011 & 0.211$\pm$0.010 & 0.148$\pm$0.030 & 0.145$\pm$0.032 & 0.141$\pm$0.033 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Detailed results for \texttt{wolne\_lektury\_corpus} with labelling strategy \texttt{classic} (mean $\pm$ std over 10 seeds).}
+\label{tab:details_classic_wolne_lektury_corpus}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Method} & \multicolumn{3}{c}{\textbf{AUC}} & \multicolumn{3}{c}{\textbf{PR-AUC}} & \multicolumn{3}{c}{\textbf{F1}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 & 0.2 & 0.5 & 0.8 \\
+\midrule
+Naive & 0.693$\pm$0.015 & \textbf{0.729$\pm$0.013} & 0.748$\pm$0.012 & 0.478$\pm$0.015 & \textbf{0.523$\pm$0.017} & \textbf{0.555$\pm$0.018} & 0.000 & 0.003$\pm$0.002 & 0.327$\pm$0.030 \\
+Clust & 0.589$\pm$0.023 & 0.643$\pm$0.017 & 0.666$\pm$0.016 & 0.406$\pm$0.017 & 0.437$\pm$0.015 & 0.456$\pm$0.015 & 0.036$\pm$0.009 & 0.058$\pm$0.013 & 0.172$\pm$0.026 \\
+S-LassClust & 0.438$\pm$0.033 & 0.621$\pm$0.019 & 0.664$\pm$0.013 & 0.320$\pm$0.014 & 0.425$\pm$0.015 & 0.458$\pm$0.012 & 0.046$\pm$0.011 & 0.090$\pm$0.027 & 0.279$\pm$0.028 \\
+NS-LassClust & 0.438$\pm$0.033 & 0.621$\pm$0.014 & 0.664$\pm$0.013 & 0.320$\pm$0.014 & 0.424$\pm$0.012 & 0.458$\pm$0.012 & 0.046$\pm$0.011 & 0.078$\pm$0.020 & 0.279$\pm$0.028 \\
+LassoJoint & \textbf{0.767$\pm$0.009} & 0.709$\pm$0.029 & \textbf{0.776$\pm$0.011} & \textbf{0.544$\pm$0.013} & 0.488$\pm$0.027 & 0.554$\pm$0.015 & \textbf{0.601$\pm$0.028} & 0.299$\pm$0.251 & \textbf{0.681$\pm$0.009} \\
+Spy & 0.533$\pm$0.007 & 0.534$\pm$0.007 & 0.533$\pm$0.007 & 0.394$\pm$0.004 & 0.394$\pm$0.004 & 0.394$\pm$0.004 & 0.556$\pm$0.004 & \textbf{0.556$\pm$0.004} & 0.556$\pm$0.004 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Feature Descriptions}
+
+Table~\ref{tab:feature_descriptions} provides a comprehensive list of all 22 linguistic and stylometric features used in the benchmark. All numeric features are rescaled to the $[0,1]$ range using min-max normalization before model training.
+
+\begin{table}[htbp]
+\centering
+\caption{Description of 22 input features (X) used in the benchmark.}\label{tab:feature_descriptions}
+\small
+\begin{tabular}{lp{0.7\textwidth}}
+\toprule
+\textbf{Feature} & \textbf{Description} \\
+\midrule
+\texttt{adj\_ratio} & Ratio of adjectives to total words \\
+\texttt{adjectives} & Count of adjectives in the document \\
+\texttt{adverbs} & Count of adverbs in the document \\
+\texttt{avg\_sentence\_length} & Average number of words per sentence \\
+\texttt{avg\_word\_length} & Average number of characters per word \\
+\texttt{camel\_case} & Count of camelCase words \\
+\texttt{capitalized\_words} & Count of words starting with uppercase letter \\
+\texttt{characters} & Total character count (excluding whitespace) \\
+\texttt{gunning\_fog} & Gunning Fog index; estimates U.S. school grade needed to understand text \\
+\texttt{lexical\_density} & Ratio of content words (nouns, verbs, adjectives, adverbs) to total words \\
+\texttt{noun\_ratio} & Ratio of nouns to total words \\
+\texttt{nouns} & Count of nouns in the document \\
+\texttt{oovs} & Count of out-of-vocabulary words (not in standard Polish dictionary) \\
+\texttt{pos\_num} & Count of numerals (number-tagged part-of-speech tokens) \\
+\texttt{pos\_x} & Count of unknown or rare part-of-speech categories \\
+\texttt{punctuations} & Count of punctuation marks \\
+\texttt{sentences} & Count of sentences (detected by sentence boundary markers) \\
+\texttt{stopwords} & Count of common Polish stopwords (high-frequency, low-content words) \\
+\texttt{symbols} & Count of non-alphanumeric symbols (special characters) \\
+\texttt{verb\_ratio} & Ratio of verbs to total words \\
+\texttt{verbs} & Count of verbs in the document \\
+\texttt{words} & Total word count \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
+
+
