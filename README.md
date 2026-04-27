@@ -114,52 +114,6 @@ python scripts/run_benchmark.py \
 
 This runs all combinations in a single pass and saves to `outputs/benchmark_runs.csv` and `outputs/benchmark_summary.csv`.
 
-## Project Structure
-
-```
-mdai26_pullm/
-├── README.md                    (this file)
-├── .gitignore                   (git ignore rules)
-├── pyproject.toml              (Python project metadata)
-├── requirements.txt            (pip dependencies)
-├── repo_description_en.md      (detailed technical description)
-│
-├── src/py_puml/                (core library)
-│   ├── __init__.py
-│   ├── benchmark.py            (benchmark orchestration)
-│   ├── labelling.py            (PU labeling schemes)
-│   ├── methods.py              (all 6 PU methods)
-│   ├── metrics.py              (evaluation metrics)
-│   └── data_loader.py          (CSV/SpeakLeash loading)
-│
-├── scripts/                    (CLI tools)
-│   ├── run_benchmark.py        (main benchmark runner)
-│   ├── run_smoke_benchmark.py  (quick validation test)
-│   ├── preprocess_datasets.py  (CSV preprocessing)
-│   ├── visualize_benchmark_results.py  (plots & tables)
-│   ├── generate_tables_for_paper.py    (LaTeX output)
-│   └── (other utility scripts)
-│
-├── tests/                      (test suite)
-│   ├── test_benchmark.py
-│   ├── test_labelling.py
-│   ├── test_methods_smoke.py
-│   └── test_metrics.py
-│
-├── paper/                      (manuscript files)
-│   ├── main.tex               (main manuscript)
-│   ├── supplement.tex         (supplementary tables)
-│   ├── supplement.pdf         (compiled PDF with results)
-│   ├── llncs.cls              (Springer LNCS class)
-│   └── splncs04.bst           (BibTeX style)
-│
-├── data/                       (user data location, empty by default)
-│   └── README.md              (data format specifications)
-│
-└── outputs/                    (benchmark results)
-    ├── benchmark_runs.csv      (raw per-seed results)
-    └── benchmark_summary.csv   (aggregated statistics)
-```
 
 ## Results & Output Files
 
