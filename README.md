@@ -312,21 +312,6 @@ This work is part of research on quality classification for LLM training texts u
 - [paper/main.tex](paper/main.tex) — Full manuscript LaTeX source
 - [paper/supplement.pdf](paper/supplement.pdf) — Supplementary materials with detailed results
 
-## License
-
-[Add appropriate license information if applicable]
-
-## Authors & Contributors
-
-Research conducted as part of the MDAI'26 benchmark initiative.
-
-## Support & Questions
-
-For issues, questions, or feedback:
-1. Check [data/README.md](data/README.md) for data format details
-2. Review [repo_description_en.md](repo_description_en.md) for technical workflow
-3. Run tests with `pytest tests/ -v` to validate installation
-4. Check pre-computed `outputs/benchmark_summary.csv` against your runs
 
 ---
 
