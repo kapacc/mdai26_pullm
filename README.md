@@ -205,14 +205,6 @@ runs, summary = benchmark_many_datasets_union_train(
 "
 ```
 
-### Visualization
-After running benchmarks, generate plots and LaTeX tables:
-
-```bash
-python scripts/visualize_benchmark_results.py
-python scripts/generate_tables_for_paper.py
-```
-
 ## Common Issues & Solutions
 
 **ImportError: No module named 'speakleash'**
